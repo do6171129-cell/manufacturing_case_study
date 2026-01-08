@@ -45,3 +45,13 @@ project-root/
    └─ raw/
       └─ Manufacturing_dataset.csv
 ```
+## データの出典
+
+本分析で使用するデータは、以下の公開データセットを利用している。
+
+- Smart Manufacturing Process Data  
+  出典：Kaggle  
+  https://www.kaggle.com/datasets/programmer3/smart-manufacturing-process-data
+
+本リポジトリは、分析手法および設計の提示を目的としており、
+データ自体の再配布・商用利用・内容評価を目的とするものではない。
