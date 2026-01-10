@@ -34,12 +34,59 @@
 - `analysis_case3.ipynb`  
   本事例の分析内容および計算結果をまとめた Notebook。
 
+# データ分析事例4：時間境界 τ に対する構造差 δ₂ の形状確認
+## 目的
+
+本事例では、時間境界 τ を系列上で移動させたときに、
+構造差指標 δ₂ がどのような形状的振る舞いを示すかを確認する。
+
+原因推定・最適化・変更理由の特定は目的としない。
+
+## 分析の範囲
+
+### やること
+
+- τ をインデックス基準で移動させる
+- 各 τ に対して before / after を定義する
+- δ₂ を系列として算出・整理する
+- full / sampled の双方で形状を可視化する
+
+### やらないこと
+
+- 因果関係の解釈
+- τ の最適化・特定
+- 区間間の優劣評価
+- 時刻（Timestamp）との直接対応付け
+
+## 分析のフロー
+
+1. τ 候補集合の生成（full / sampled）
+2. 各 τ に対する δ₂ の算出
+3. τ–δ₂ 系列の可視化
+4. 形状の観測と整理
+
+## 実装方針
+
+- pandas：データ読み込みおよび分割
+- NumPy：δ₂ 計算および系列処理
+
+δ₂ 定義は src/metrics.py に分離し再利用可能とする
+
+## 成果物
+
+- analysis_case4.ipynb
+τ–δ₂ 系列の算出および可視化を行った Notebook。
+
+
 ## ディレクトリ構成
 ```text
 project-root/
-├─ analysis_case3.ipynb
 ├─ README.md
 ├─ .gitignore
+├─ analysis_case3.ipynb
+├─ analysis_case4.ipynb
+├─ src/
+│  └─ metrics.py
 └─ data/
    └─ raw/
       └─ Manufacturing_dataset.csv
